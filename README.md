@@ -10,7 +10,8 @@ Usage: ./build/PokemonAGBMovement [-gs]
 (if you don't know what this means, use `./build/PokemonAGBMovement -s` to open the app normally and `./build/PokemonAGBMovement -gs` to open the app with a greenscreen)
 
 ## What is this?
-a simple SDL2 application which tries to simulate the Pokemon Firered/Leafgreen movement system as accurately as I can without stealing code from the decomp of Pokemon Firered/Leafgreen.
+a simple SDL2 application which tries to simulate the Pokemon Firered/Leafgreen movement system as accurately as I can without stealing code from the decomp of Pokemon Firered/Leafgreen.  
+It's got it all, grid snapping, running, both genders, and most importantly, a random 3x3 block of water!
   
 https://github.com/memyboi/PokemonAGBMovementTest/assets/75206733/a6f4847c-0b48-47ec-afd3-8174941923e2
 
