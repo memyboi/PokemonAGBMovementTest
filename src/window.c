@@ -10,6 +10,7 @@
 #include "defs.h"
 
 Window window;
+extern bool greenscreen;
 
 void throwError(char component[]) { //probably leaks memory, fuck the user for having a shitty system :p
   printf("Failed to initialise %s! Error details: %s", component, SDL_GetError());
@@ -104,7 +105,8 @@ void blit(SDL_Texture *texture, int x, int y, int w, int h) {
 // drawing post init
 
 void draw(void) {
-  SDL_SetRenderDrawColor(window.renderer, BGR, BGG, BGB, 255);
+  if (greenscreen) SDL_SetRenderDrawColor(window.renderer, 0, 255, 0, 255);
+  else SDL_SetRenderDrawColor(window.renderer, BGR, BGG, BGB, 255);
   SDL_RenderClear(window.renderer);
 }
 

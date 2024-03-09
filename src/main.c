@@ -2,7 +2,9 @@
 // check for any memory leaks (im new to C)
 // the memory leak program is valgrind
 
+#include <stdbool.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "SDL_timer.h"
 #include "window.h"
@@ -14,9 +16,20 @@ extern Window window;
 extern Player player;
 int framecount = 0;
 
+bool greenscreen;
+
 static void capFrameRate(long *then, float *remainder);
 
-int main() {
+int main(int argc, char *argv[]) {
+  // arg parse:
+  int opt;
+  while((opt = getopt(argc, argv, "g")) != -1) {
+    switch (opt) {
+      case 'g': greenscreen = true; break;
+      default: break;
+    }
+  }
+
   memset(&window, 0, sizeof(Window));
   memset(&player, 0, sizeof(Player));
   initialise(); // initialise SDL
