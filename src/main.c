@@ -22,13 +22,17 @@ static void capFrameRate(long *then, float *remainder);
 
 int main(int argc, char *argv[]) {
   // arg parse:
+  bool start;
   int opt;
-  while((opt = getopt(argc, argv, "g")) != -1) {
+  while((opt = getopt(argc, argv, "gs")) != -1) {
     switch (opt) {
       case 'g': greenscreen = true; break;
+      case 's': start = true; break;
       default: break;
     }
   }
+
+  if (!start) return printf("Usage: %s [-gs]\n-g: greenscreen\n-s: start", argv[0]);
 
   memset(&window, 0, sizeof(Window));
   memset(&player, 0, sizeof(Player));
