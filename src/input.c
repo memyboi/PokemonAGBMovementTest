@@ -4,6 +4,7 @@
 #include <SDL2/SDL.h>
 #include "SDL_scancode.h"
 #include "object.h" 
+#include "defs.h"
 
 extern Player player;
 extern Camera cam;
@@ -37,6 +38,12 @@ void handleKeyDown(SDL_KeyboardEvent *event) {
   switch (event->keysym.scancode) {
     case SDL_SCANCODE_R:
       cam.trackPlayer = !cam.trackPlayer;
+      break;
+
+    case SDL_SCANCODE_T:
+      // can't stop yourself from going crazy in a completely blank void? Well, introducing to you:
+      player.relativeX = 16*SCALE;
+      player.relativeY = 16*SCALE;
       break;
 
     case SDL_SCANCODE_UP:
