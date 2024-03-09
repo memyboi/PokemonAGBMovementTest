@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  if (!start) return printf("Usage: %s [-gs]\n-g: greenscreen\n-s: start", argv[0]);
+  if (!start) return printf("Usage: %s [-gs]\n-g: greenscreen\n-s: start\n", argv[0]);
 
   memset(&window, 0, sizeof(Window));
   memset(&player, 0, sizeof(Player));
