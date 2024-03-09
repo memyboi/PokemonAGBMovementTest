@@ -15,6 +15,11 @@ It's got it all, grid snapping, running, both genders, and most importantly, a r
   
 https://github.com/memyboi/PokemonAGBMovementTest/assets/75206733/a6f4847c-0b48-47ec-afd3-8174941923e2
 
+The greenscreen option can be used to do things like this:  
+(ignore the top-tier editing)  
+
+https://github.com/memyboi/PokemonAGBMovementTest/assets/75206733/f8294a87-e476-4c3f-9be8-dff0e766ef86
+
 Controls:  
 W,A,S,D,Left,Up,Down,Right - movement  
 Shift - sprint  
