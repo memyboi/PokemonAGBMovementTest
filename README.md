@@ -25,6 +25,7 @@ W,A,S,D,Left,Up,Down,Right - movement
 Shift - sprint  
 R - freeze / unfreeze camera  
 G - change gender  
+T - reset player position  
 
 ## How to compile?
 made for linux, as I do not use windows (mac os might work, but cba to test :p)  
