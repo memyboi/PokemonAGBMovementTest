@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "object.h": "c",
+        "sdl_scancode.h": "c",
+        "stdbool.h": "c"
+    }
+}

@@ -1,7 +1,7 @@
 #include <stdbool.h>
 
-#include "SDL_rect.h"
-#include "SDL_render.h"
+#include "SDL2/SDL_rect.h"
+#include "SDL2/SDL_render.h"
 #include "object.h"
 #include "window.h"
 #include "defs.h"

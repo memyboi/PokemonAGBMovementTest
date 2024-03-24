@@ -1,7 +1,7 @@
-#include "SDL_error.h"
-#include "SDL_rect.h"
-#include "SDL_render.h"
-#include "SDL_video.h"
+#include "SDL2/SDL_error.h"
+#include "SDL2/SDL_rect.h"
+#include "SDL2/SDL_render.h"
+#include "SDL2/SDL_video.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <stdbool.h>

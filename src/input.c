@@ -1,8 +1,8 @@
-#include "SDL_events.h"
+#include "SDL2/SDL_events.h"
 #include <stdbool.h>
 #include <stdlib.h>
 #include <SDL2/SDL.h>
-#include "SDL_scancode.h"
+#include "SDL2/SDL_scancode.h"
 #include "object.h" 
 #include "defs.h"
 
