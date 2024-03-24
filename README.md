@@ -30,7 +30,7 @@ T - reset player position
 ## How to compile?
 made for linux, as I do not use windows (mac os might work, but cba to test :p)  
   
-### install dependancies:
+### install dependencies:
 Libraries:  
 Arch based distro (eg. Arch, Endeavor OS): `sudo pacman -S sdl2 sdl2_image`  
 Fedora based distro (eg. Fedora, Nobara): `sudo dnf install SDL2 SDL2-devel SDL2_image SDL2_image-devel`  
