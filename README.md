@@ -3,9 +3,9 @@ My first proper C project! Entirely made with only C.
 ( this means memory leaks are iminent )
 
 ```
-Usage: ./build/PokemonAGBMovement [-gs]
+Usage: ./build/PokemonAGBMovement [-gh]
 -g: greenscreen
--s: start
+-h: help
 ```  
 (if you don't know what this means, use `./build/PokemonAGBMovement -s` to open the app normally and `./build/PokemonAGBMovement -gs` to open the app with a greenscreen)
 
