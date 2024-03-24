@@ -7,7 +7,7 @@ Usage: ./build/PokemonAGBMovement [-gh]
 -g: greenscreen
 -h: help
 ```  
-(if you don't know what this means, use `./build/PokemonAGBMovement -s` to open the app normally and `./build/PokemonAGBMovement -gs` to open the app with a greenscreen)
+(if you don't know what this means, use `./build/PokemonAGBMovement` to open the app normally and `./build/PokemonAGBMovement -g` to open the app with a greenscreen)
 
 ## What is this?
 a simple SDL2 application which tries to simulate the Pokemon Firered/Leafgreen movement system as accurately as I can without stealing code from the decomp of Pokemon Firered/Leafgreen.  
