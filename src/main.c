@@ -51,8 +51,8 @@ int main(int argc, char *argv[]) {
     draw();
     getEvents();
     renderObjects();
-    present();
     capFrameRate(&then, &remainder);
+    present();
     framecount++;
   }
 }

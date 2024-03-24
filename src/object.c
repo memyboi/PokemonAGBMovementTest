@@ -2,13 +2,16 @@
 
 #include "SDL2/SDL_rect.h"
 #include "SDL2/SDL_render.h"
-#include "object.h"
 #include "window.h"
 #include "defs.h"
+#include "object.h"
 
 Player player;
 Camera cam;
-Tile test;
+
+AnimatedTile test;
+Tile grasspatch;
+
 extern int framecount;
 
 void initialiseCamera(void) {
@@ -58,31 +61,55 @@ void initialisePlayer(void) {
 }
 
 void initialiseTestSquare(void) {
-  //water
-  test.h = 16;
+  SDL_Texture *basictiles = loadTexture("assets/basictiles.png");
+  grasspatch.w = 16;
+  grasspatch.h = 16;
+  grasspatch.x = ((WINWIDTH*SCALE) / 2 - (grasspatch.w*SCALE) / 2)-(16*SCALE);
+  grasspatch.y = ((WINHEIGHT*SCALE) / 2 - (grasspatch.h*SCALE) / 2)-(16*SCALE);
+  grasspatch.srcx = 6;
+  grasspatch.srcy = 64;
+  grasspatch.srcw = 16;
+  grasspatch.srch = 16;
+  grasspatch.copyTileX = 4;
+  grasspatch.copyTileY = 4;
+  grasspatch.texture = basictiles;
+
   test.w = 16;
-  test.x = (WINWIDTH*SCALE) / 2 - (test.w*SCALE) / 2;
-  test.y = (WINHEIGHT*SCALE) / 2 - (test.h*SCALE) / 2;
+  test.h = 16;
+  test.x = ((WINWIDTH*SCALE) / 2 - (test.w*SCALE) / 2)+(16*5*SCALE);
+  test.y = ((WINHEIGHT*SCALE) / 2 - (test.h*SCALE) / 2);
   test.srcx = 4;
   test.srcy = 3;
   test.srcw = 16;
   test.srch = 16;
-  test.texture = loadTexture("assets/basictiles.png");
+  test.copyTileX = 5;
+  test.copyTileY = 5;
+  test.frames = 8; //assuming all tiles are side by side with the same gap
+  test.jump = 17;
+  test.speed = 16;
+  test.texture = basictiles;
 }
 
-void renderTestSquare(void) {
-  int frame = (framecount/16) % 8;
-  blitCropped(test.texture, test.x-cam.x, test.y-cam.y, test.w*SCALE, test.h*SCALE, test.srcx + (frame*17), test.srcy, test.srcw, test.srch);
-  blitCropped(test.texture, test.x-cam.x+(16*SCALE), test.y-cam.y, test.w*SCALE, test.h*SCALE, test.srcx + (frame*17), test.srcy, test.srcw, test.srch);
-  blitCropped(test.texture, test.x-cam.x+(32*SCALE), test.y-cam.y, test.w*SCALE, test.h*SCALE, test.srcx + (frame*17), test.srcy, test.srcw, test.srch);
+void renderTile(Tile *tile) {
+  for (int ii = 0; ii < tile->copyTileY+1; ii++) {
+    for (int i = 0; i < tile->copyTileX+1; i++) {
+      blitCropped(tile->texture, tile->x-cam.x+(i*tile->w*SCALE), tile->y-cam.y+(ii*tile->h*SCALE), tile->w*SCALE, tile->h*SCALE, tile->srcx, tile->srcy, tile->srcw, tile->srch);
+    }
+  }
+}
 
-  blitCropped(test.texture, test.x-cam.x, test.y-cam.y+(16*SCALE), test.w*SCALE, test.h*SCALE, test.srcx + (frame*17), test.srcy, test.srcw, test.srch);
-  blitCropped(test.texture, test.x-cam.x+(16*SCALE), test.y-cam.y+(16*SCALE), test.w*SCALE, test.h*SCALE, test.srcx + (frame*17), test.srcy, test.srcw, test.srch);
-  blitCropped(test.texture, test.x-cam.x+(32*SCALE), test.y-cam.y+(16*SCALE), test.w*SCALE, test.h*SCALE, test.srcx + (frame*17), test.srcy, test.srcw, test.srch);
+void renderAnimatedTile(AnimatedTile *tile) {
+  int frame = (framecount/tile->speed) % tile->frames;
+  for (int ii = 0; ii < tile->copyTileY+1; ii++) {
+    for (int i = 0; i < tile->copyTileX+1; i++) {
+      blitCropped(tile->texture, tile->x-cam.x+(i*tile->w*SCALE), tile->y-cam.y+(ii*tile->h*SCALE), tile->w*SCALE, tile->h*SCALE, tile->srcx + (frame*tile->jump), tile->srcy, tile->srcw, tile->srch);
+    }
+  }
+}
 
-  blitCropped(test.texture, test.x-cam.x, test.y-cam.y+(32*SCALE), test.w*SCALE, test.h*SCALE, test.srcx + (frame*17), test.srcy, test.srcw, test.srch);
-  blitCropped(test.texture, test.x-cam.x+(16*SCALE), test.y-cam.y+(32*SCALE), test.w*SCALE, test.h*SCALE, test.srcx + (frame*17), test.srcy, test.srcw, test.srch);
-  blitCropped(test.texture, test.x-cam.x+(32*SCALE), test.y-cam.y+(32*SCALE), test.w*SCALE, test.h*SCALE, test.srcx + (frame*17), test.srcy, test.srcw, test.srch);
+void renderTiles(void) {
+  renderTile(&grasspatch);
+  renderAnimatedTile(&test);
 }
 
 void renderPlayer(void) {
@@ -216,6 +243,6 @@ void initialiseObjects(void) {
 }
 
 void renderObjects(void) {
-  renderTestSquare();
+  renderTiles();
   renderPlayer();
 }

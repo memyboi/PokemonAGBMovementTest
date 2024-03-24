@@ -59,5 +59,29 @@ typedef struct {
   int srcw;
   int srch;
 
+  int copyTileX;
+  int copyTileY;
+
   SDL_Texture *texture;
 } Tile;
+
+typedef struct {
+  int x;
+  int y;
+  int w;
+  int h;
+
+  int srcx;
+  int srcy;
+  int srcw;
+  int srch;
+
+  int frames; //assuming all tiles are side by side with the same gap
+  int jump;
+  int speed;
+
+  int copyTileX;
+  int copyTileY;
+
+  SDL_Texture *texture;
+} AnimatedTile;
