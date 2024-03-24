@@ -58,4 +58,4 @@ cd PokemonAGBMovementTest
 make
 ./build/PokemonAGBMovement
 ```
-assuming you have the correct dependancies, it should go off without a hitch.
+assuming you have the correct dependencies, it should go off without a hitch.
