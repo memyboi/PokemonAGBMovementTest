@@ -28,7 +28,9 @@ G - change gender
 T - reset player position  
 
 ## How to compile?
-made for linux, as I do not use windows (mac os might work, but cba to test :p)  
+made for linux, might work for mac os.
+i do not know how to compile for windows.
+(trust me, i tried)
   
 ### install dependencies:
 Libraries:  
