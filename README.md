@@ -28,18 +28,22 @@ G - change gender
 T - reset player position  
 
 ## How to compile?
-made for linux, might work for mac os.
+made for linux, a little unstable on mac os.
 i do not know how to compile for windows.
 (trust me, i tried)
   
 ### install dependencies:
 Libraries:  
+Windows: ¯\\\_(ツ)\_/¯ good luck  
+Mac OS (install homebrew first) `brew install sdl2 sdl2_image`  
 Arch based distro (eg. Arch, Endeavor OS): `sudo pacman -S sdl2 sdl2_image`  
 Fedora based distro (eg. Fedora, Nobara): `sudo dnf install SDL2 SDL2-devel SDL2_image SDL2_image-devel`  
 Debian based distro (eg. Debian, Ubuntu): `sudo apt-get install libsdl2-dev libsdl2-image-dev`  
 Other: figure it out lol :p  
 
 Compilation requirements:  
+Windows: ¯\\\_(ツ)\_/¯ good luck  
+Mac OS (install homebrew first) `brew install meson ninja make`  
 Arch based distro (eg. Arch, Endeavor OS): `sudo pacman -S gcc git meson make ninja`  
 Fedora based distro (eg. Fedora, Nobara): `sudo dnf install gcc git meson make ninja-build`  
 Debian based distro (eg. Debian, Ubuntu): `sudo apt-get install gcc git meson make ninja-build`  
