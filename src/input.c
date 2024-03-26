@@ -8,6 +8,7 @@
 
 extern Player player;
 extern Camera cam;
+extern bool greenscreen;
 
 void setPlayerMovement(int moveType, bool down) {
   // 0 - down, 1 - up, 2 - left, 3 - right, 4 - run
@@ -44,6 +45,11 @@ void handleKeyDown(SDL_KeyboardEvent *event) {
       // can't stop yourself from going crazy in a completely blank void? Well, introducing to you:
       player.relativeX = 16*SCALE;
       player.relativeY = 16*SCALE;
+      break;
+
+    case SDL_SCANCODE_K:
+      //toggle greenscreen
+      greenscreen = !greenscreen;
       break;
 
     case SDL_SCANCODE_UP:

@@ -4,7 +4,6 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 #include "SDL2/SDL_timer.h"
 #include "window.h"
@@ -21,22 +20,6 @@ bool greenscreen;
 static void capFrameRate(long *then, float *remainder);
 
 int main(int argc, char *argv[]) {
-  // arg parse:
-  bool usage = false;
-  int opt;
-  while((opt = getopt(argc, argv, "gh")) != -1) {
-    switch (opt) {
-      case 'g': greenscreen = true; break;
-      case 'h': usage = true; break;
-      default: break;
-    }
-  }
-
-  if (usage) {
-    printf("Usage: %s [-gh]\n-g: greenscreen\n-h: help\n", argv[0]);
-    return 0;
-  }
-
   memset(&window, 0, sizeof(Window));
   memset(&player, 0, sizeof(Player));
   initialise(); // initialise SDL
