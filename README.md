@@ -2,12 +2,7 @@
 My first proper C project! Entirely made with only C.  
 ( this means memory leaks are iminent )
 
-```
-Usage: ./build/PokemonAGBMovement [-gh]
--g: greenscreen
--h: help
-```  
-(if you don't know what this means, use `./build/PokemonAGBMovement` to open the app normally and `./build/PokemonAGBMovement -g` to open the app with a greenscreen)
+use `./build/PokemonAGBMovement` to run
 
 ## What is this?
 a simple SDL2 application which tries to simulate the Pokemon Firered/Leafgreen movement system as accurately as I can without stealing code from the decomp of Pokemon Firered/Leafgreen.  
@@ -24,8 +19,9 @@ Controls:
 W,A,S,D,Left,Up,Down,Right - movement  
 Shift - sprint  
 R - freeze / unfreeze camera  
-G - change gender  
+G - toggle male/female sprite  
 T - reset player position  
+K - toggle greenscreen  
 
 ## How to compile?
 made for linux, a little unstable on mac os.
