@@ -26,7 +26,9 @@ K - toggle greenscreen
 ## How to compile?
 made for linux, a little unstable on mac os.
 i do not know how to compile for windows.
-(trust me, i tried)
+(trust me, i tried)  
+  
+(for apple sillicon, it works best on asahi linux. this is due to screen tearing on mac os that i don't know how to fix :/)
   
 ### install dependencies:
 Libraries:  
